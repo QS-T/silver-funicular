@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>教务员端 - 教师考勤系统</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <nav class="sidebar" id="sidebar">
+            <div class="brand"><h2>📚 考勤<span>系统</span></h2></div>
+            <div class="user-info">
+                <div class="name" id="userName">教务员</div>
+                <div class="role" id="userRole">教务员</div>
+            </div>
+            <a class="nav-item active" data-page="dashboard">📊 总览</a>
+            <a class="nav-item" data-page="teachers">👨‍🏫 教师管理</a>
+            <a class="nav-item" data-page="courses">📖 课程管理</a>
+            <a class="nav-item" data-page="schedules">📅 排班管理</a>
+            <a class="nav-item" data-page="attendance">📋 考勤管理</a>
+            <a class="nav-item" data-page="leaves">📝 请假审核</a>
+            <a class="nav-item" data-page="reports">📊 报表统计</a>
+            <a class="nav-item logout" id="logoutBtn">🚪 退出</a>
+        </nav>
+        <div class="main-content" id="mainContent"></div>
+    </div>
+    <script src="js/api.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>

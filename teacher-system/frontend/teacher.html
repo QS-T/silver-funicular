@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>教师端 - 教师考勤系统</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- 登录界面（遮罩） -->
+<div id="loginOverlay" style="position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:999; display:flex; align-items:center; justify-content:center;">
+    <div style="background:#fff; border-radius:16px; padding:40px; width:400px; max-width:90%; box-shadow:0 20px 60px rgba(0,0,0,0.3);">
+        <h2 style="text-align:center; color:#1a3a5c; margin-bottom:8px;">📚 教师登录</h2>
+        <p style="text-align:center; color:#6b7a8d; margin-bottom:24px;">请输入工号和密码</p>
+        <form id="teacherLoginForm">
+            <div class="form-group">
+                <label>工号</label>
+                <input type="text" id="teacherLoginId" placeholder="如 T001" value="T001" required>
+            </div>
+            <div class="form-group">
+                <label>密码</label>
+                <input type="password" id="teacherLoginPassword" placeholder="密码" value="123456" required>
+            </div>
+            <button type="submit" class="btn-login" style="width:100%; padding:12px; background:#1a3a5c; color:#fff; border:none; border-radius:10px; font-size:16px; font-weight:600; cursor:pointer;">登 录</button>
+            <div id="teacherLoginError" style="margin-top:12px; color:#e53e3e; text-align:center;"></div>
+        </form>
+        <div style="margin-top:16px; text-align:center; font-size:13px; color:#8a9bb0;">
+            提示：测试工号 T001~T005，密码均为 123456
+        </div>
+    </div>
+</div>
+
+<!-- 原有侧边栏和内容区域，包裹在 <div id="teacherContent" style="display:none;"> 中 -->
+<div id="teacherContent" style="display:none;">
+    <div class="app-container">
+        <!-- 侧边栏保持不变 -->
+        <nav class="sidebar" id="sidebar">...</nav>
+        <!-- 主内容 -->
+        <div class="main-content" id="mainContent">...</div>
+    </div>
+</div>
+    <div class="app-container">
+        <!-- 侧边栏 -->
+        <nav class="sidebar" id="sidebar">
+            <div class="brand">
+                <h2>📚 考勤<span>系统</span></h2>
+            </div>
+            <div class="user-info">
+                <div class="name" id="userName">教师</div>
+                <div class="role" id="userRole">授课教师</div>
+            </div>
+            <a class="nav-item active" data-page="dashboard">
+                <span class="icon">📊</span><span>我的看板</span>
+            </a>
+            <a class="nav-item" data-page="clock">
+                <span class="icon">⏰</span><span>打卡</span>
+            </a>
+            <a class="nav-item" data-page="schedule">
+                <span class="icon">📅</span><span>我的排班</span>
+            </a>
+            <a class="nav-item" data-page="attendance">
+                <span class="icon">📋</span><span>考勤记录</span>
+            </a>
+            <a class="nav-item" data-page="leave">
+                <span class="icon">📝</span><span>请假申请</span>
+            </a>
+            <a class="nav-item logout" id="logoutBtn">
+                <span class="icon">🚪</span><span>退出登录</span>
+            </a>
+        </nav>
+
+        <!-- 主内容 -->
+        <div class="main-content" id="mainContent">
+            <!-- 页面内容由JS动态渲染 -->
+        </div>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/teacher.js"></script>
+</body>
+</html>
